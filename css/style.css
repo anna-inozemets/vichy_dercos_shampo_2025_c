@@ -214,23 +214,6 @@ ul {
   background-color: var(--green-c);
 }
 
-.slide__slot p.frequency {
-  position: absolute;
-  top: 1em;
-  bottom: 1em;
-  left: -0.8em;
-  writing-mode: sideways-lr;
-  font-size: 2.7em;
-  font-weight: 700;
-  background-color: var(--white-c);
-  color: var(--green-c);
-  border: solid 0.25em var(--green-c);
-  text-align: center;
-  padding: 0.1em 0.3em;
-  order: 1;
-  transition: all 0.5s linear;
-  opacity: 0;
-}
 .slide__slot p.or {
   position: relative;
   top: 0.55em;
@@ -240,10 +223,6 @@ ul {
   order: 3;
   transition: all 0.5s linear;
   opacity: 0;
-}
-
-.slide__slot:not(.half-active) p.frequency {
-  opacity: 1;
 }
 .slide__slot.with-product p.or {
   opacity: 1;
@@ -310,6 +289,32 @@ ul {
   top: 1.8em;
 }
 
+.slide__product--2::before, .slide__product--1::before,
+.slide__product--4::before, .slide__product--3::before {
+  position: absolute;
+  left: -2.9em;
+  top: 0;
+  bottom: 3.25em;
+  writing-mode: sideways-lr;
+  font-size: 2.7em;
+  font-weight: 700;
+  background-color: var(--white-c);
+  color: var(--green-c);
+  border: solid 0.25em var(--green-c);
+  text-align: center;
+  padding: 0.1em 0.3em;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+.slide__product--2::before, .slide__product--1::before, .slide__product--3::before {
+  content: '3 рази / тиждень';
+}
+.slide__product--4::before {
+  content: ' 1-2 рази / тиждень';
+  top: 0.8em;
+  bottom: 2.15em;
+}
+
 p.note {
   position: absolute;
   left: 0;
@@ -338,14 +343,15 @@ p.note {
   order: 4;
   top: 10.5em;
 }
+
+.slide--1 .slide__slot .slide__product--2::before {
+  opacity: 1;
+}
 /*#endregion sl1*/
 
 /*#region sl2*/
 .slide--2 .slide__slot--clear, .slide--2 .slide__slot--additional {
   padding-left: 4em;
-}
-.slide--2 .slide__slot--additional p.frequency {
-  left: 0.8em;
 }
 .slide--2 .slide__aside-content .photo {
   margin-bottom: 5em;
@@ -369,14 +375,15 @@ p.note {
   width: 12em;
   top: 4.5em;
 }
+.slide--2 .slide__slot .slide__product--1::before,
+.slide--2 .slide__slot .slide__product--4::before {
+  opacity: 1;
+}
 /*#endregion sl2*/
 
 /*#region sl3*/
 .slide--3 .slide__slot--clear, .slide--3 .slide__slot--additional {
   padding-left: 4em;
-}
-.slide--3 .slide__slot--additional p.frequency {
-  left: 0.8em;
 }
 .slide--3 .slide__aside-content p.slide-numbering {
   top: 2.6em;
@@ -395,6 +402,10 @@ p.note {
 .slide--3 .slide__slot .slide__product--4 {
   width: 12em;
   top: 4.5em;
+}
+.slide--3 .slide__slot .slide__product--3::before,
+.slide--3 .slide__slot .slide__product--4::before {
+  opacity: 1;
 }
 /*#endregion sl3*/
 
